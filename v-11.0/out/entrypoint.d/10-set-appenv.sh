@@ -7,6 +7,7 @@
 set -Eeuo pipefail
 
 export ODOO_PASSFILE="${ODOO_PASSFILE:=/run/secrets/adminpwd}"  # Odoo Passfile (Patch tools/0002)
+export ODOO_ADMINPASSWORD_FILE=ODOO_PASSFILE # Compatibility fix - patch uses different env var than above
 
 addonspath="${ODOO_SRC}"
 # Sort reverse alfanumerically first, then do realpath
